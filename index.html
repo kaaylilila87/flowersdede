@@ -616,7 +616,7 @@
       </body>
     <script  src="./script.js"></script>
 
-<img id="fotoPacar" src="fahri.png" alt="Foto Pacar" 
+<img id="fotoPacar" src="fahri.jpeg" alt="Foto Pacar" 
   style="display:none;
   position:fixed;
   top:50%; 
@@ -626,6 +626,23 @@
   border-radius:10px;
   box-shadow:0 0 20px rgba(0,0,0,0.5);
   z-index:1000;">
+
+<script>
+  document.querySelectorAll('.flower').forEach(flower => {
+    flower.addEventListener('click', () => {
+      const foto = document.getElementById('fotoPacar');
+      foto.style.display = 'block';
+    });
+  });
+
+  // Klik di mana pun untuk nutup foto
+  document.addEventListener('click', (e) => {
+    const foto = document.getElementById('fotoPacar');
+    if (foto.style.display === 'block' && !e.target.classList.contains('flower')) {
+      foto.style.display = 'none';
+    }
+  });
+</script>
 
   </body>
   
